@@ -4,7 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
     registerForm.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        // איסוף כל השדות
+        const users = JSON.parse(localStorage.getItem('allUsers')) || [];
+
         const name = document.getElementById('userName').value;
         const email = document.getElementById('userEmail').value;
         const birthDate = document.getElementById('userBirthDate').value;
@@ -12,20 +13,24 @@ document.addEventListener('DOMContentLoaded', () => {
         const passConfirm = document.getElementById('userPassConfirm').value;
 
         if (pass !== passConfirm) {
-            alert('הסיסמאות שכתבת לא תואמות! נסי שוב.');
-            return; 
+            alert('הסיסמאות לא תואמות!');
+            return;
         }
 
-        const userDetails = {
+        const role = users.length === 0 ? 'admin' : 'user';
+
+        const newUser = {
             username: name,
             email: email,
             dob: birthDate,
-            password: pass
+            password: pass,
+            role: role 
         };
 
-        localStorage.setItem('registeredUser', JSON.stringify(userDetails));
+        users.push(newUser);
+        localStorage.setItem('allUsers', JSON.stringify(users));
 
-        alert('החשבון נוצר בהצלחה! מעביר אותך להתחברות...');
+        alert(`נרשמת בהצלחה בתור ${role}!`);
         window.location.href = './login.html';
     });
 });
