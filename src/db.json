@@ -27,6 +27,34 @@
       "password": "159753",
       "dob": "2026-03-12",
       "isAdmin": false
+    },
+    {
+      "username": "Linoy",
+      "email": "Linoy@gmail",
+      "password": "11111",
+      "dob": "2000-07-28",
+      "isAdmin": false
+    },
+    {
+      "username": "itay",
+      "email": "Itay@gmail.com",
+      "password": "22222",
+      "dob": "1993-09-22",
+      "isAdmin": false
+    },
+    {
+      "username": "Orel",
+      "email": "OrelBD@gmail.com",
+      "password": "6416",
+      "dob": "2004-11-09",
+      "isAdmin": false
+    },
+    {
+      "username": "ariel",
+      "email": "ariel@gmail.com",
+      "password": "2017",
+      "dob": "1999-07-12",
+      "isAdmin": false
     }
   ]
 }
