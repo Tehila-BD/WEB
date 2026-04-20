@@ -2,33 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Management</title>
 </head>
 <body class="bg-gray-100 min-h-screen flex flex-col">
-    <nav class="bg-blue-600 p-4 text-white w-full">
+
+    <nav class="bg-blue-600 p-4 text-white shadow-md w-full">
         <div class="container mx-auto flex justify-between items-center">
             <h1 class="text-xl font-bold">Admin Panel</h1>
-            <a href="../index.html" class="hover:underline">Logout</a>
+            <ul class="flex space-x-6">
+                <li><a href="../index.html" class="hover:underline">Home</a></li>
+                <li><a href="./login.html" class="hover:underline">Logout</a></li>
+            </ul>
         </div>
     </nav>
 
-    <main class="container mx-auto mt-10 p-6 bg-white rounded-lg shadow-xl">
-        <h2 id="welcomeMsg" class="text-3xl font-bold mb-6 text-blue-800"></h2>
-        
-        <table class="w-full text-left border-collapse">
-            <thead>
-                <tr class="bg-gray-200">
-                    <th class="p-3 border">Username</th>
-                    <th class="p-3 border">Email</th>
-                    <th class="p-3 border">Birth Date</th>
-                    <th class="p-3 border">Role</th>
-                </tr>
-            </thead>
-            <tbody id="usersTableBody">
-                </tbody>
-        </table>
+    <main class="flex-1 flex p-10 justify-center">
+        <div class="bg-white p-8 rounded shadow-md w-full max-w-4xl">
+            <h1 id="userNameDisplay" class="text-2xl font-bold mb-4 text-blue-800"></h1>
+
+            <table id="usersData" class="min-w-full bg-white border border-gray-300">
+                <thead class="bg-gray-200">
+                    <tr>
+                        <th class="p-3 border">Username</th>
+                        <th class="p-3 border">Email</th>
+                        <th class="p-3 border">Birth Date</th>
+                        <th class="p-3 border">Is Admin</th>
+                    </tr>
+                </thead>
+                <tbody id="usersTableBody">
+                    </tbody>
+            </table>
+        </div>
     </main>
 
+    <script src="./users.js"></script>
     <script type="module" src="./main.js"></script>
     <script type="module" src="./userManagement.js"></script>
 </body>

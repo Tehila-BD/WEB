@@ -1,30 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.querySelector('form');
-
     if (!loginForm) return;
 
     loginForm.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        const emailInput = document.getElementById('userEmail').value;
+        const userInput = document.getElementById('userEmail').value;
         const passInput = document.getElementById('userPass').value;
 
-        const users = JSON.parse(localStorage.getItem('allUsers')) || [];
+        let foundUser = find(userInput); 
 
-        const foundUser = users.find(u => u.email === emailInput && u.password === passInput);
-
-        if (foundUser) {
+        if (foundUser && foundUser.password === passInput) {
             localStorage.setItem('currentUser', JSON.stringify(foundUser));
             
             alert(`שלום ${foundUser.username}`); 
 
-            if (foundUser.role === 'admin') {
+            if (foundUser.isAdmin) {
                 window.location.href = './userManagement.html';
             } else {
                 window.location.href = '../index.html';
             }
         } else {
-            alert('אימייל או סיסמה לא נכונים. נסי שוב!');
+            alert('פרטי התחברות שגויים. נסו שוב!');
         }
     });
-}); 
+});

@@ -47,6 +47,19 @@
                      <input type="date" id="userBirthDate" required class="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-400" />
                 </div>
 
+                <div id="arithmetic-captcha-container" class="space-y-2 mb-4">
+                    <label for="captcha-answer" class="block text-sm font-medium text-gray-700">Solve the CAPTCHA:</label>
+                    <div class="flex items-center space-x-4">
+                        <span id="arithmetic-challenge" class="text-lg font-semibold text-gray-800 bg-gray-200 p-2 rounded"></span>
+                        <button type="button" id="refresh-arithmetic-captcha" class="p-1 hover:bg-gray-100 rounded" title="Refresh CAPTCHA">
+                            <img class="h-8" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/RECAPTCHA_icon.svg/150px-ReCAPTCHA_icon.svg.png" alt="refresh">
+                        </button>
+                    </div>
+                    <input type="number" id="captcha-answer" required placeholder="Your answer" 
+                        class="w-full border border-gray-300 p-2 rounded focus:ring-2 focus:ring-blue-400 focus:outline-none" />
+                    </div>
+                <div id="register-message" class="text-sm font-bold mb-2"></div>
+
                 <button type="submit" class="w-full p-3 bg-blue-500 text-white rounded font-bold hover:bg-blue-600 transition-colors shadow-md">
                     Register
                 </button>
@@ -57,6 +70,7 @@
         </div>
     </main>
 
+    <script src="./users.js"></script> 
     <script type="module" src="./main.js"></script>
     <script type="module" src="./register.js"></script>
 </body>

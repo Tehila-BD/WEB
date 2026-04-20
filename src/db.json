@@ -1,0 +1,32 @@
+{
+  "users": [
+    {
+      "username": "tehila",
+      "email": "tehila@gmail.com",
+      "password": "5678",
+      "dob": "1999-01-08",
+      "isAdmin": true
+    },
+    {
+      "username": "lala",
+      "email": "lala@gmail.com",
+      "password": "1234",
+      "dob": "1990-10-13",
+      "isAdmin": false
+    },
+    {
+      "username": "Inbar",
+      "email": "inbar@gmail.com",
+      "password": "123456789",
+      "dob": "1999-06-28",
+      "isAdmin": false
+    },
+    {
+      "username": "Or",
+      "email": "or@gmail.com",
+      "password": "159753",
+      "dob": "2026-03-12",
+      "isAdmin": false
+    }
+  ]
+}
